@@ -53,6 +53,7 @@ public class TestPet {
 		for (Pet each : pets) {
 			each.makeSound();
 			System.out.println();
+			System.out.println();
 			//Wait
 /*			try {
 			    Thread.sleep(1);                 //1: it means wait 1 millisecond.
