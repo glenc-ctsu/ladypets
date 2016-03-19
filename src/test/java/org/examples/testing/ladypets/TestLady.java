@@ -1,5 +1,5 @@
 package org.examples.testing.ladypets;
 
 public class TestLady {
-		// TODO Auto-generated method stub - CGG
+		// TODO Auto-generated method stub - CGG -short log
 }
