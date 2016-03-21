@@ -29,7 +29,7 @@ public class TestLady {
 	public void testPlayPets() throws IOException{
 		String workingDirectory = System.getProperty("user.dir");
 		//System.out.println(workingDirectory);
-		String propertyFilePath = workingDirectory + "//src//test//java//org//examples//property//";
+		String propertyFilePath = workingDirectory + "//src//test//java//org//examples//resources//";
 		FileInputStream fip = new FileInputStream( propertyFilePath + "Param.properties");
 		Properties prop = new Properties();
 		prop.load(fip);
