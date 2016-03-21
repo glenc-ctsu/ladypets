@@ -25,10 +25,9 @@ public class TestLady {
 	public void testPlayPets(){
 		Random gen = new Random();
 		DataFactory df =new DataFactory();
-		int ladyNumber = gen.nextInt(5) +3;
+		int ladyNumber = gen.nextInt(5) +3;  //How many ladies own pets
 		for(int i=0; i < ladyNumber; i++){
-			new Lady(df.getName(), new Random().nextInt(6)+1).playPets();
+			new Lady(df.getName(), new Random().nextInt(6)+1).playPets();  //How many pets this lady owns
 		}
-		
 	}
 }

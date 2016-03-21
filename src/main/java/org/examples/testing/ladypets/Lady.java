@@ -11,7 +11,7 @@ public class Lady {
 	Lady(String name, int count){
 		this.name = name;
 		this.count = count;
-		pets = new ArrayList<Pet>();
+		pets = new ArrayList<Pet>(); 
 		for(int i=0; i<count; i++){
 			int rnd = new Random().nextInt(100);
 			if ( rnd % 3 == 0)
