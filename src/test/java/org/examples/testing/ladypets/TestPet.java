@@ -45,6 +45,7 @@ public class TestPet {
 	public void printMethodNameAfter(Method method){
 		System.out.println("Test Name: " + method.getName() + " -- Ends @ " + new SimpleDateFormat("E yyyy-MM-dd HH:mm:ss.SSS").format(new Date()));
 		System.out.println();
+		System.out.println();
 	}
 	
 
