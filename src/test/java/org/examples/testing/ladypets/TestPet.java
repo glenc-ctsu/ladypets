@@ -18,7 +18,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TestPet {
-	Collection<Pet> pets = null;          //Collection is an interface - you can use index
+	private Collection<Pet> pets = null;          //Collection is an interface - you can use index
 
 	@BeforeTest
 	public void BeforeTest(){
