@@ -1,8 +1,12 @@
 package org.examples.testing.ladypets;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 import java.util.Random;
 
 import org.fluttercode.datafactory.impl.DataFactory;
@@ -22,11 +26,18 @@ public class TestLady {
 	}
 	
 	@Test
-	public void testPlayPets(){
-		Random gen = new Random();
-		DataFactory df =new DataFactory();
-		int ladyNumber = gen.nextInt(5) +3;  //How many ladies own pets
-		for(int i=0; i < ladyNumber; i++){
+	public void testPlayPets() throws IOException{
+		String workingDirectory = System.getProperty("user.dir");
+		//System.out.println(workingDirectory);
+		String propertyFilePath = workingDirectory + "//src//test//java//org//examples//property//";
+		FileInputStream fip = new FileInputStream( propertyFilePath + "Param.properties");
+		Properties prop = new Properties();
+		prop.load(fip);
+		String countString = prop.getProperty("ladyCount");
+		int ladyCount = Integer.parseInt(countString);
+		System.out.println(" Total lady count = " + ladyCount); //read it from "Para.properties" file
+		DataFactory df =new DataFactory(); //Fake name generator
+		for(int i=0; i < ladyCount; i++){
 			new Lady(df.getName(), new Random().nextInt(6)+1).playPets();  //How many pets this lady owns
 		}
 	}
