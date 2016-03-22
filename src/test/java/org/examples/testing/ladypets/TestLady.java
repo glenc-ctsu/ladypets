@@ -29,10 +29,9 @@ public class TestLady {
 	public void testPlayPets() throws IOException{
 		String workingDirectory = System.getProperty("user.dir");
 		//System.out.println(workingDirectory);
-		String propertyFilePath = workingDirectory + "//src//test//java//org//examples//resources//";
-		FileInputStream fip = new FileInputStream( propertyFilePath + "Param.properties");
 		Properties prop = new Properties();
-		prop.load(fip);
+		String propertyFilePath = workingDirectory + "/src/test/java/org/examples/resources/";
+		prop.load(new FileInputStream( propertyFilePath + "Param.properties"));
 		String countString = prop.getProperty("LadyCount");
 		int ladyCount = Integer.parseInt(countString);
 		System.out.println(" Total lady count = " + ladyCount); //read it from "Para.properties" file
