@@ -13,7 +13,7 @@ public class Lady {
 		this.count = count;
 		pets = new ArrayList<Pet>(); 
 		for(int i=0; i<count; i++){
-			int rnd = new Random().nextInt(100);
+			int rnd = new Random().nextInt(18);
 			if ( rnd % 3 == 0)
 				pets.add(new Dog());
 			else if(rnd % 3== 1)
