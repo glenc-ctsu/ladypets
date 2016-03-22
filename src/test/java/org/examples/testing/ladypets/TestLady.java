@@ -33,7 +33,7 @@ public class TestLady {
 		FileInputStream fip = new FileInputStream( propertyFilePath + "Param.properties");
 		Properties prop = new Properties();
 		prop.load(fip);
-		String countString = prop.getProperty("ladyCount");
+		String countString = prop.getProperty("LadyCount");
 		int ladyCount = Integer.parseInt(countString);
 		System.out.println(" Total lady count = " + ladyCount); //read it from "Para.properties" file
 		DataFactory df =new DataFactory(); //Fake name generator
