@@ -1,6 +1,7 @@
 package org.examples.testing.ladypets;
 
-import java.io.FileInputStream;
+//import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileNotFoundException;
 //import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,19 +22,32 @@ public class TestLady {
 		//System.out.println(workingDirectory);
 		Properties prop = new Properties();
 		String propertyFilePath = workingDirectory + "/src/test/java/org/examples/testing/resources/";
-		FileInputStream fis=null;
+//		FileInputStream fis=null;
+		FileReader fReader=null;
 		try {
-			fis = new FileInputStream(propertyFilePath + "Param.properties");
+//			fis = new FileInputStream(propertyFilePath + "Param.properties");
+			fReader = new FileReader(propertyFilePath + "Param.properties");
 		} catch (FileNotFoundException e) {
 			System.out.println("Property file not found !");
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 
 		try {
-			prop.load(fis);
+//			prop.load(fis);
+			prop.load(fReader);
 		} catch (IOException e) {
 			System.out.println("Property file loading failure !");
+			System.out.println(e.getMessage());
 			e.printStackTrace();
+		} catch (NullPointerException e){
+			System.out.println("Null Pointer Exception - cgg !");
+			System.out.println("cgg - Message is: " + e.getMessage());
+			e.printStackTrace();
+		} finally {  									//Always run irrespective of success or failure
+			//System.out.println("Final block !!!!!!!!");
+//			fis.close();
+			fReader.close();
 		}
 		return prop.getProperty(keyName);
 	}
@@ -51,14 +65,9 @@ public class TestLady {
 	}
 	
 	@Test
-	public void testPlayPets(){
+	public void testPlayPets() throws IOException{
 		String keyValue=null;
-		try {
-			keyValue = readPropertyFromFile("LadyCount");
-		} catch (IOException e) {
-			System.out.println("Failed to ge keyValue !!!");
-			e.printStackTrace();
-		}
+		keyValue = readPropertyFromFile("LadyCount");
 		int ladyCount = Integer.parseInt(keyValue);
 		System.out.println(" Total lady count = " + ladyCount); //read it from "Para.properties" file
 		DataFactory df =new DataFactory(); //Fake name generator
