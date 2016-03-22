@@ -30,7 +30,7 @@ public class TestLady {
 		String workingDirectory = System.getProperty("user.dir");
 		//System.out.println(workingDirectory);
 		Properties prop = new Properties();
-		String propertyFilePath = workingDirectory + "/src/test/java/org/examples/resources/";
+		String propertyFilePath = workingDirectory + "/src/test/java/org/examples/testing/resources/";
 		prop.load(new FileInputStream( propertyFilePath + "Param.properties"));
 		String countString = prop.getProperty("LadyCount");
 		int ladyCount = Integer.parseInt(countString);
