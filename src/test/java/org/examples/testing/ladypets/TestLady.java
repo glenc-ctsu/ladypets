@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 public class TestLady {
 	public String readPropertyFromFile(String keyName) throws IOException{
 		String workingDirectory = System.getProperty("user.dir");
-		//System.out.println(workingDirectory);
+		System.out.println(workingDirectory);
 		Properties prop = new Properties();
 		String propertyFilePath = workingDirectory + "/src/test/java/org/examples/testing/resources/";
 //		FileInputStream fis=null;
